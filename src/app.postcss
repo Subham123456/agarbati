@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--theme-font-family-base: 'Inter', sans-serif;
+		--theme-font-family-heading: 'Playfair Display', serif;
+	}
+}
+
+@layer components {
+	.gradient-text {
+		@apply bg-gradient-to-r from-brand-secondary via-brand-accent to-brand-primary bg-clip-text text-transparent;
+	}
+	
+	.floating-animation {
+		animation: floating 6s ease-in-out infinite;
+	}
+	
+	.fade-in {
+		animation: fadeIn 1s ease-in;
+	}
+	
+	.slide-up {
+		animation: slideUp 0.8s ease-out;
+	}
+}
+
+@keyframes floating {
+	0%, 100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-20px);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #8B4513;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #6B3410;
+}
+
+/* Smooth scroll */
+html {
+	scroll-behavior: smooth;
+}
+
