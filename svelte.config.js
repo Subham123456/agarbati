@@ -13,10 +13,12 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: '/agarbati'
+			base: '/agarbati',
+			relative: false
 		},
 		prerender: {
-			handleHttpError: 'warn'
+			handleHttpError: 'warn',
+			entries: ['*']
 		}
 	}
 };
